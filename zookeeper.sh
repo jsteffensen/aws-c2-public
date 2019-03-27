@@ -36,3 +36,7 @@ sudo update-rc.d zookeeper defaults
 
 sudo mkdir -p /data/zookeeper
 sudo chown -R ubuntu:ubuntu /data/
+
+# setup quorum properties
+rm /home/ubuntu/kafka/config/zookeeper.properties
+wget -P /home/ubuntu/kafka/config/ https://raw.githubusercontent.com/jsteffensen/aws-c2-public/master/zookeeper.properties
