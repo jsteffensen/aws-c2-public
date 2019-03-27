@@ -1,10 +1,11 @@
 # Install Docker
 sudo yum install -y docker
 sudo systemctl start docker.service
+# add user to docker group - log and back in for user to pick up these privileges
 sudo usermod -a -G docker ec2-user
-sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+# install cocker compose
+sudo curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
-
 
 # Test Zoonavigator
 docker-compose -f zoonavigator.yml up -d
