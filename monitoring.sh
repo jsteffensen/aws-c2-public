@@ -7,8 +7,11 @@ sudo usermod -a -G docker ec2-user
 sudo curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
-# Test Zoonavigator
+# Get Zoonavigator docker image
+wget https://raw.githubusercontent.com/jsteffensen/aws-c2-public/master/zoonavigator.yml
 docker-compose -f zoonavigator.yml up -d
+
+ hertil
 # Setup Docker Compose as systemD
 sudo nano /etc/systemd/system/docker-compose@.service
 # Install Zoonavigator as SystemD
