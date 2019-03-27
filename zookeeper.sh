@@ -26,7 +26,7 @@ rm kafka_2.12-2.2.0.tgz
 mv kafka_2.12-2.2.0 kafka
 
 # Install Zookeeper boot scripts
-wget -P /etc/init.d/ https://raw.githubusercontent.com/jsteffensen/aws-c2-public/master/zookeeper
+sudo wget -P /etc/init.d/ https://raw.githubusercontent.com/jsteffensen/aws-c2-public/master/zookeeper
 
 sudo chmod +x /etc/init.d/zookeeper
 sudo chown root:root /etc/init.d/zookeeper
