@@ -33,3 +33,6 @@ sudo chown root:root /etc/init.d/zookeeper
 
 # you can safely ignore the warning
 sudo update-rc.d zookeeper defaults
+
+sudo mkdir -p /data/zookeeper
+sudo chown -R ubuntu:ubuntu /data/
