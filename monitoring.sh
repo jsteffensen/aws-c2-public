@@ -1,32 +1,42 @@
 # Install Docker
 sudo yum install -y docker
 sudo systemctl start docker.service
+
 # add user to docker group - log and back in for user to pick up these privileges
 sudo usermod -a -G docker ec2-user
+
 # install cocker compose
 sudo curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
 # Get Zoonavigator docker image
-wget https://raw.githubusercontent.com/jsteffensen/aws-c2-public/master/zoonavigator.yml
-docker-compose -f zoonavigator.yml up
+#wget https://raw.githubusercontent.com/jsteffensen/aws-c2-public/master/zoonavigator.yml
+#docker-compose -f zoonavigator.yml up -d
 
- hertil video 3.2
 # Setup Docker Compose as systemD
-sudo nano /etc/systemd/system/docker-compose@.service
+sudo wget -P /etc/systemd/system/ https://raw.githubusercontent.com/jsteffensen/aws-c2-public/master/docker-compose%40.service
+
 # Install Zoonavigator as SystemD
 sudo mkdir -p /etc/docker/compose/zoonavigator/
+sudo wget -P /etc/docker/compose/zoonavigator/ -O docker-compose.yml https://raw.githubusercontent.com/jsteffensen/aws-c2-public/master/zoonavigator.yml
 
-sudo nano /etc/docker/compose/zoonavigator/docker-compose.yml
-
+# move to end?
 sudo systemctl start docker-compose@zoonavigator
 
+
+
+
 # Test Kafka Manager
-docker-compose -f kafka-manager.yml up -d
+# docker-compose -f kafka-manager.yml up -d
 # Install Kafka Manager as SystemD
 sudo mkdir -p /etc/docker/compose/kafka-manager/
-sudo nano /etc/docker/compose/kafka-manager/docker-compose.yml
+
+#sudo nano /etc/docker/compose/kafka-manager/docker-compose.yml
+sudo wget -P /etc/docker/compose/kafka-manager/ -O docker-compose.yml 
+
 sudo systemctl enable docker-compose@kafka-manager # automatically start at boot
+
+#move to end?
 sudo systemctl start docker-compose@kafka-manager   
 
 # Install Kafka-Monitor
