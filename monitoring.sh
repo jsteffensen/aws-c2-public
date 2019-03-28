@@ -9,14 +9,16 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 # Get Zoonavigator docker image
 wget https://raw.githubusercontent.com/jsteffensen/aws-c2-public/master/zoonavigator.yml
-docker-compose -f zoonavigator.yml up -d
+docker-compose -f zoonavigator.yml up
 
- hertil
+ hertil video 3.2
 # Setup Docker Compose as systemD
 sudo nano /etc/systemd/system/docker-compose@.service
 # Install Zoonavigator as SystemD
 sudo mkdir -p /etc/docker/compose/zoonavigator/
+
 sudo nano /etc/docker/compose/zoonavigator/docker-compose.yml
+
 sudo systemctl start docker-compose@zoonavigator
 
 # Test Kafka Manager
