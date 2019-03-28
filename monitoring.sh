@@ -32,7 +32,7 @@ sudo systemctl start docker-compose@zoonavigator
 sudo mkdir -p /etc/docker/compose/kafka-manager/
 
 #sudo nano /etc/docker/compose/kafka-manager/docker-compose.yml
-sudo wget -P /etc/docker/compose/kafka-manager/ -O docker-compose.yml 
+sudo wget -P /etc/docker/compose/kafka-manager/ -O docker-compose.yml https://raw.githubusercontent.com/jsteffensen/aws-c2-public/master/kafka-manager.yml
 
 sudo systemctl enable docker-compose@kafka-manager # automatically start at boot
 
