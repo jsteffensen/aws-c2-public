@@ -39,5 +39,5 @@ sudo mkdir -p /data/kafka
 sudo chown -R ubuntu:ubuntu /data/
 
 # set properties
-rm /home/ubuntu/kafka/config/kafka.properties
+rm /home/ubuntu/kafka/config/server.properties
 wget -P /home/ubuntu/kafka/config/ https://raw.githubusercontent.com/jsteffensen/aws-c2-public/master/kafka.properties
