@@ -13,7 +13,7 @@ services:
     depends_on:
      - api
   api:
-    image: elkozmon/zoonavigator-web:0.6.1
+    image: elkozmon/zoonavigator-api:0.6.1
     container_name: zoonavigator-api
     environment:
       API_HTTP_PORT: 9000
