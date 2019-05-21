@@ -18,7 +18,7 @@ echo "172.31.1.1 zookeeper1c
 172.31.3.1 kafka1c
 172.31.19.1 kafka2a
 172.31.35.1 kafka3b
-172.31.1.31 monitor1c" | sudo tee --append /etc/hosts
+172.31.17.12 monitoring" | sudo tee --append /etc/hosts
 
 # download Zookeeper and Kafka. Recommended is latest Kafka (0.10.2.1) and Scala 2.12
 wget http://dk.mirrors.quenda.co/apache/kafka/2.2.0/kafka_2.12-2.2.0.tgz
