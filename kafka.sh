@@ -35,6 +35,7 @@ sudo chown root:root /etc/init.d/kafka
 sudo update-rc.d kafka defaults
 
 # set properties
+<<<<<<< HEAD
 rm /home/ubuntu/kafka/config/kafka.properties
 wget -P /home/ubuntu/kafka/config/ https://raw.githubusercontent.com/jsteffensen/aws-c2-public/master/kafka.properties
 
@@ -48,3 +49,7 @@ echo "* hard nofile 100000
 nano /home/ubuntu/kafka/config/kafka.properties
 
 # sudo reboot
+=======
+rm /home/ubuntu/kafka/config/server.properties
+wget -P /home/ubuntu/kafka/config/ https://raw.githubusercontent.com/jsteffensen/aws-c2-public/master/kafka.properties
+>>>>>>> 8d0db3cd53e5d54126e0a73812f678392d4f7531
