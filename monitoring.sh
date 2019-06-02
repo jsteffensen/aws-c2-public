@@ -40,3 +40,10 @@ sudo wget -P /etc/systemd/system/ https://raw.githubusercontent.com/jsteffensen/
 
 # Run as service:
 # sudo systemctl start kafka-monitor
+
+# Setup prometheus exporter
+cd ..
+mkdir prometheus
+cd prometheus
+wget https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/0.11.0/jmx_prometheus_javaagent-0.11.0.jar
+wget https://raw.githubusercontent.com/jsteffensen/aws-c2-public/master/prometheus_kafka-2_0_0.yml
