@@ -17,7 +17,7 @@ case "$1" in
             echo "Kafka is already running"
         else
           echo "Starting $DAEMON_NAME"
-		  export KAFKA_OPTS="-javaagent:/home/ubuntu/prometheus/jmx_prometheus_javaagent-0.11.0.jar=8080:/home/ubuntu/prometheus/prometheus_kafka-2_0_0.yml"
+          export KAFKA_OPTS="-javaagent:/home/ubuntu/prometheus/jmx_prometheus_javaagent-0.11.0.jar=8080:/home/ubuntu/prometheus/prometheus_kafka-2_0_0.yml"
           $DAEMON_PATH/kafka-server-start.sh -daemon /home/ubuntu/kafka/config/kafka.properties
         fi
         ;;
