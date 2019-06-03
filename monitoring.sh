@@ -43,7 +43,13 @@ sudo wget -P /etc/systemd/system/ https://raw.githubusercontent.com/jsteffensen/
 
 # Setup prometheus exporter
 cd ..
+sudo service kafka stop
 mkdir prometheus
 cd prometheus
 wget https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/0.11.0/jmx_prometheus_javaagent-0.11.0.jar
 wget https://raw.githubusercontent.com/jsteffensen/aws-c2-public/master/prometheus_kafka-2_0_0.yml
+
+# to run prometheus from within the dir
+# ./prometheus
+# or specify file:
+# ./prometheus --config.file=prometheus.yml
