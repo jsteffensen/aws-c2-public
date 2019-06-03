@@ -41,13 +41,15 @@ sudo wget -P /etc/systemd/system/ https://raw.githubusercontent.com/jsteffensen/
 # Run as service:
 # sudo systemctl start kafka-monitor
 
-# Setup prometheus exporter
-cd ..
-sudo service kafka stop
-mkdir prometheus
+# Setup prometheus client
+
+wget https://github.com/prometheus/prometheus/releases/download/v2.10.0/prometheus-2.10.0.linux-amd64.tar.gz
+tar -xzf prometheus-2.10.0.linux-amd64.tar.gz
+rm prometheus-2.10.0.linux-amd64.tar.gz
+mv prometheus-2.10.0.linux-amd64 prometheus
 cd prometheus
-wget https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/0.11.0/jmx_prometheus_javaagent-0.11.0.jar
-wget https://raw.githubusercontent.com/jsteffensen/aws-c2-public/master/prometheus_kafka-2_0_0.yml
+rm prometheus.yml
+wget https://raw.githubusercontent.com/jsteffensen/aws-c2-public/master/prometheus.yml
 
 # to run prometheus from within the dir
 # ./prometheus

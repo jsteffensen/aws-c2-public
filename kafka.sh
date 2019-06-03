@@ -38,16 +38,20 @@ sudo update-rc.d kafka defaults
 rm /home/ubuntu/kafka/config/kafka.properties
 wget -P /home/ubuntu/kafka/config/ https://raw.githubusercontent.com/jsteffensen/aws-c2-public/master/kafka.properties
 
-
-
 # Add file limits configs - allow to open 100,000 file descriptors
 echo "* hard nofile 100000
 * soft nofile 100000" | sudo tee --append /etc/security/limits.conf
 
 # SET BROKER ID
-nano /home/ubuntu/kafka/config/kafka.properties
+#nano /home/ubuntu/kafka/config/kafka.properties
 
 # sudo reboot
 =======
 rm /home/ubuntu/kafka/config/server.properties
 wget -P /home/ubuntu/kafka/config/ https://raw.githubusercontent.com/jsteffensen/aws-c2-public/master/kafka.properties
+
+# setup prometheus jmx exporter agent
+mkdir prometheus
+cd prometheus
+wget https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/0.11.0/jmx_prometheus_javaagent-0.11.0.jar
+wget https://raw.githubusercontent.com/jsteffensen/aws-c2-public/master/prometheus_kafka-2_0_0.yml
